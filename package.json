@@ -6,6 +6,9 @@
   "scripts": {
     "start": "node ./src/server.js",
     "dev": "nodemon ./src/server.js",
+    "knex:latest": "npx knex --knexfile knexfile.js migrate:latest",
+    "knex:rollback": "npx knex --knexfile knexfile.js migrate:rollback",
+    "knex:migrate": "npx knex --knexfile knexfile.js migrate:make --",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
