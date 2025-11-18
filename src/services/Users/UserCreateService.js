@@ -29,18 +29,30 @@ class UserCreateService {
     }
 
     // HASHING DE SENHA (A Segurança)
-    const saltRounds = 
-    const hashedPassword 
+    let hashedPassword
+
+    try {
+      const saltRounds = 10
+      // ENCRIPTAR AQUI
+    } catch (error) {
+      console.error('Bcrypt Hashing Failed:', error)
+      throw new AppError(
+        'Falha na segurança da aplicação. Tente novamente.',
+        500
+      )
+    }
 
     // INSERÇÃO NO BANCO DE DADOS
-    const [userId] = await knex('usuarios').insert({
-      name,
-      email,
-      password: hashedPassword // Salva o hash, e NÃO a senha original
-      // status e role usam os valores default
-    })
-
-    return userId // Retorna o ID do usuário criado
+    try {
+      // INSERIR NO BANCO
+      // RETORNAR O ID
+    } catch (error) {
+      console.error('Database Insert Failed:', error)
+      throw new AppError(
+        'Não foi possível registrar o usuário devido a um erro interno.',
+        500
+      )
+    }
   }
 }
 
