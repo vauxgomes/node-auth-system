@@ -33,7 +33,7 @@ class UserCreateService {
 
     try {
       const saltRounds = 10
-      // ENCRIPTAR AQUI
+      hashedPassword = await bcrypt.hash(password, saltRounds)
     } catch (error) {
       console.error('Bcrypt Hashing Failed:', error)
       throw new AppError(
@@ -44,8 +44,13 @@ class UserCreateService {
 
     // INSERÇÃO NO BANCO DE DADOS
     try {
-      // INSERIR NO BANCO
-      // RETORNAR O ID
+      const [userId] = await knex('usuarios').insert({
+        name,
+        email,
+        password: hashedPassword
+      })
+      
+      return userId
     } catch (error) {
       console.error('Database Insert Failed:', error)
       throw new AppError(
