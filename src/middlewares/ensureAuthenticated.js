@@ -16,11 +16,12 @@ function ensureAuthenticated(request, response, next) {
 
   // VERIFICA A VALIDADE DO TOKEN
   try {
-    const { sub: user_id } = verify(token, authConfig.jwt.secret)
+    const { sub: user_id, role } = verify(token, authConfig.jwt.secret)
 
     // ANEXA O ID DO USUÁRIO À REQUISIÇÃO
     request.user = {
-      id: Number(user_id)
+      id: Number(user_id),
+      role
     }
 
     return next() // Prossegue para o controller
