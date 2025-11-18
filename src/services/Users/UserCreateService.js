@@ -1,9 +1,5 @@
 const knex = require('../../database')
-<<<<<<< HEAD
 const AppError = require('../../utils/AppError')
-=======
-const AppError = require('../utils/AppError')
->>>>>>> 9ee397a (feat: UserCreateService base)
 const bcrypt = require('bcryptjs') // Usamos bcryptjs para o hashing
 
 class UserCreateService {
@@ -33,7 +29,6 @@ class UserCreateService {
     }
 
     // HASHING DE SENHA (A Segurança)
-<<<<<<< HEAD
     let hashedPassword
 
     try {
@@ -63,20 +58,6 @@ class UserCreateService {
         500
       )
     }
-=======
-    const saltRounds = 
-    const hashedPassword 
-
-    // INSERÇÃO NO BANCO DE DADOS
-    const [userId] = await knex('usuarios').insert({
-      name,
-      email,
-      password: hashedPassword // Salva o hash, e NÃO a senha original
-      // status e role usam os valores default
-    })
-
-    return userId // Retorna o ID do usuário criado
->>>>>>> 9ee397a (feat: UserCreateService base)
   }
 }
 
