@@ -6,15 +6,20 @@ const usersRoutes = Router()
 // Importa o Controller
 const UsersController = require('../controllers/UsersController')
 
+// Middlewares
+const ensureAuthenticated = require('../middlewares/ensureAuthenticated')
+
 // Instancia o Controller
 const usersController = new UsersController()
 
-// Rotas
-usersRoutes.get('/', usersController.index)
-usersRoutes.get('/:id', usersController.show)
+// Rotas públicas
 usersRoutes.post('/', usersController.create)
-usersRoutes.put('/:id', usersController.update)
-usersRoutes.delete('/:id', usersController.delete)
+
+// Rotas protegidas por autenticação
+usersRoutes.get('/', ensureAuthenticated, usersController.index)
+usersRoutes.get('/:id', ensureAuthenticated, usersController.show)
+usersRoutes.put('/:id', ensureAuthenticated, usersController.update)
+usersRoutes.delete('/:id', ensureAuthenticated, usersController.delete)
 
 // Export
 module.exports = usersRoutes
