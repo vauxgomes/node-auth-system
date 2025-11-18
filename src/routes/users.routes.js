@@ -10,8 +10,11 @@ const UsersController = require('../controllers/UsersController')
 const usersController = new UsersController()
 
 // Rotas
+usersRoutes.get('/', usersController.index)
+usersRoutes.get('/:id', usersController.show)
 usersRoutes.post('/', usersController.create)
-// As demais rotas devem ser colocadas aqui
+usersRoutes.put('/:id', usersController.update)
+usersRoutes.delete('/:id', usersController.delete)
 
 // Export
 module.exports = usersRoutes
