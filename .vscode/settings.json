@@ -1,0 +1,32 @@
+{
+  "workbench.colorCustomizations": {
+    // 🎨 Cores baseadas na identidade visual dos Institutos Federais (Verde, Amarelo/Branco)
+    
+    // Fundo da Barra de Status (Verde Escuro)
+    "statusBar.background": "#005a30", // Um verde escuro, sóbrio e institucional.
+    "statusBar.noFolderBackground": "#005a30", // O mesmo verde para quando não houver pasta aberta.
+    
+    // Texto e Ícones na Barra de Status (Branco/Amarelo Claro)
+    "statusBar.foreground": "#ffffff", // Branco puro para melhor contraste.
+    "statusBar.noFolderForeground": "#ffffff", // Branco puro para melhor contraste.
+    
+    // Fundo do Modo de Debugging (Azul, remetendo ao "progresso" ou "tecnologia")
+    "statusBar.debuggingBackground": "#007acc", // Um azul forte e limpo.
+    "statusBar.debuggingForeground": "#ffffff", // Branco para o texto.
+    
+    // Cor ao passar o mouse ou item ativo (Um tom de Verde um pouco mais claro/brilhante)
+    "statusBarItem.hoverBackground": "#007a40", // Um verde que se destaca ao passar o mouse.
+    "statusBarItem.activeBackground": "#004a25", // Um verde mais escuro para o item ativo.
+
+    // 🚩 Itens de Erro e Aviso
+    // O erro pode se manter vermelho, ou usar um amarelo/laranja mais forte para aviso
+    "statusBarItem.errorBackground": "#cc3333", // Padrão para manter a atenção no erro
+    "statusBar.debuggingForeground": "#ffffff",
+    "statusBarItem.warningBackground": "#ffb800", // Um Amarelo/Laranja Dourado (Aviso)
+    "statusBarItem.warningForeground": "#000000", // Preto para contraste com o Amarelo/Laranja
+
+    // 💻 Item Remoto (usando o azul de debugging ou o verde base)
+    "statusBarItem.remoteBackground": "#007acc", // Azul para itens remotos (SSH/WSL)
+    "statusBarItem.remoteForeground": "#ffffff"
+  }
+}
